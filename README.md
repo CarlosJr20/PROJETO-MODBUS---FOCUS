@@ -10,4 +10,4 @@ npm install jsmodbus
 ```
 node api.js
 ```
-<a href="https://focusautomacao.com.br" target="_blank"> <img width="120" src="https://focusautomacao.com.br/wp-content/uploads/2022/02/Ativo-1.png"> </a>
+<a href="https://focusautomacao.com.br" target="_blank"> <img width="250" src="https://focusautomacao.com.br/wp-content/uploads/2022/02/Ativo-1.png"> </a>
