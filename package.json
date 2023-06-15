@@ -1,0 +1,17 @@
+{
+  "name": "projeto-modbus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "api.js",
+  "scripts": {
+    "start": "node api.js"
+  },
+  "author": "FOCUS AUTOMACAO E SISTEMAS",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "js": "^0.1.0",
+    "jsmodbus": "^4.0.6",
+    "modbus": "^1.1.1"
+  }
+}
