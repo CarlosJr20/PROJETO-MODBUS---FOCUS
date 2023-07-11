@@ -4,13 +4,13 @@ const modbus = require('jsmodbus');
 const net = require('net');
 const socket = new net.Socket();
 const options = {
-  // 'host': '192.168.1.5',
-  'host': '127.0.0.1',
+  'host': '192.168.1.5',
+  // 'host': '127.0.0.1',
   'port': '502'
 };
 const client = new modbus.client.TCP(socket);
 
-const readings = {}; // Initialize an empty object to store the readings
+const readings = {}; 
 
 function read() {
   socket.on('connect', function () {
@@ -33,25 +33,24 @@ function read() {
 }
 
 function readCoils() {
-  // Read coil 2427
+
   client.readCoils(2424, 1)
     .then(function (resp) {
       readings['BICO_1'] = resp.response._body.valuesAsArray[0];
 
-      // Read coil 2463
+ 
       client.readCoils(2463, 1)
         .then(function (resp) {
           readings['BICO_2'] = resp.response._body.valuesAsArray[0];
 
-          // Check if any value is greater than 500
           if (readings.PESO_1 > 500 || readings.PESO_2 > 500) {
-            // Set the values to 0
+         
             readings.PESO_1 = 0;
             readings.PESO_2 = 0;
           }
 
-          socket.end(); // Close the socket connection after reading both coils
-          console.log(JSON.stringify(readings)); // Output the readings as JSON
+          socket.end(); 
+          console.log(JSON.stringify(readings));
         })
         .catch(function () {
           console.error(require('util').inspect(arguments, {
