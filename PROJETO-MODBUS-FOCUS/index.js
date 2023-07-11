@@ -43,7 +43,7 @@ function readCoils() {
         .then(function (resp) {
           readings['BICO_2'] = resp.response._body.valuesAsArray[0];
 
-          if (readings.PESO_1 > 500 || readings.PESO_2 > 500) {
+          if (readings.PESO_1 > 300 || readings.PESO_2 > 300 || readings.PESO_1 < 0 || || readings.PESO_2 < 0) {
          
             readings.PESO_1 = 0;
             readings.PESO_2 = 0;
